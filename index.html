@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light" />
+<link rel="icon" href="data:," />
+<title>井上由美 プロフィール</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7f4f5;
+    --surface:#ffffff;
+    --ink:#1c2130;
+    --ink-2:#394660;
+    --ink-3:#5a6478;
+    --line:#e6e1e3;
+    --line-2:#d9d2d6;
+    --accent:#b61629;
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html{ -webkit-text-size-adjust:100%; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", system-ui, -apple-system, sans-serif;
+    line-height:1.75;
+    font-size:16px;
+  }
+  a{ color:inherit; }
+  .wrap{
+    max-width:640px;
+    margin:0 auto;
+    padding:0 20px 56px;
+  }
+
+  /* Header */
+  .hero{
+    padding:52px 0 36px;
+    text-align:left;
+  }
+  .hero-rule{
+    width:36px; height:3px; background:var(--accent);
+    margin-bottom:28px;
+  }
+  .furigana{
+    font-size:13px; letter-spacing:.28em;
+    color:var(--ink-3);
+    margin:0 0 6px;
+    font-weight:500;
+  }
+  h1.name{
+    font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
+    font-size:44px; line-height:1.15; letter-spacing:.06em;
+    font-weight:600; color:var(--ink);
+    margin:0;
+  }
+  .title{
+    margin:16px 0 0;
+    font-size:15px; font-weight:700; letter-spacing:.04em;
+    color:var(--ink-2);
+  }
+  .intro{
+    margin:18px 0 0;
+    font-size:15.5px; line-height:1.9;
+    color:#2b3040;
+  }
+
+  section{ margin-top:44px; }
+  .sec-head{
+    display:flex; align-items:baseline; gap:12px;
+    margin-bottom:16px;
+  }
+  .sec-head::before{
+    content:""; width:18px; height:1px; background:var(--accent); flex:0 0 auto; transform:translateY(-4px);
+  }
+  h2{
+    font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
+    font-size:18px; font-weight:600; letter-spacing:.06em;
+    color:var(--ink); margin:0; line-height:1.5;
+  }
+  h2.biz{ font-size:17px; }
+
+  .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+  }
+
+  /* Qualifications */
+  .qual-list{ list-style:none; margin:0; padding:6px 18px; }
+  .qual-list li{
+    padding:13px 0;
+    font-size:15.5px; font-weight:500;
+    display:flex; gap:10px; align-items:flex-start;
+  }
+  .qual-list li + li{ border-top:1px solid var(--line); }
+  .qual-mark{ color:var(--ink-2); font-size:12px; line-height:2; flex:0 0 auto; }
+
+  /* Business */
+  .biz-grid{ display:grid; grid-template-columns:1fr; gap:10px; }
+  @media (min-width:560px){ .biz-grid{ grid-template-columns:1fr 1fr; } }
+  .biz-item{
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    min-height:56px;
+    padding:14px 16px;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:12px;
+    font-size:15px; font-weight:500; line-height:1.45;
+    text-decoration:none;
+  }
+  a.biz-item{ transition:border-color .15s, background .15s; }
+  a.biz-item:hover{ border-color:var(--ink-2); }
+  a.biz-item:active{ background:#fbf9fa; }
+  .biz-arrow{
+    flex:0 0 auto; color:var(--accent); font-size:18px; line-height:1;
+  }
+  .biz-note{ font-size:13px; color:var(--ink-3); font-weight:400; display:block; margin-top:2px; }
+
+  /* SNS */
+  .sns-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .sns-item{
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    min-height:52px; padding:12px 10px;
+    background:var(--ink); color:#fff;
+    border-radius:12px; text-decoration:none;
+    font-size:15px; font-weight:700; letter-spacing:.02em;
+  }
+  .sns-item.secondary{ background:var(--surface); color:var(--ink); border:1px solid var(--line-2); }
+  .sns-item:active{ opacity:.92; }
+
+  /* History */
+  .hist{ padding:4px 18px; }
+  .hist-row{ padding:14px 0; }
+  .hist-row + .hist-row{ border-top:1px solid var(--line); }
+  .hist-label{
+    font-size:12px; letter-spacing:.14em; font-weight:700; color:var(--accent);
+    margin:0 0 4px;
+  }
+  .hist-main{ font-size:15.5px; font-weight:500; margin:0; line-height:1.6; }
+  .hist-date{ font-size:13.5px; color:var(--ink-3); margin:2px 0 0; }
+
+  footer{
+    margin-top:52px; padding-top:22px;
+    border-top:1px solid var(--line-2);
+    text-align:center;
+  }
+  footer a{
+    display:inline-flex; align-items:center; min-height:40px; padding:6px 10px;
+    font-size:14px; color:var(--ink-2); text-decoration:none; font-weight:500;
+  }
+  footer a:hover{ text-decoration:underline; }
+  .foot-name{
+    font-family:"Noto Serif JP",serif; font-size:13px; letter-spacing:.12em; color:var(--ink-3); margin:0 0 2px;
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <header class="hero">
+    <div class="hero-rule" aria-hidden="true"></div>
+    <p class="furigana">いのうえゆみ</p>
+    <h1 class="name">井上 由美</h1>
+    <p class="title">合同会社よーそろ 専務執行役員</p>
+    <p class="intro">LLCよーそろ専務執行役員、主に講師業（ITと着物）よーそろwebの中の人・たまに店舗の奥</p>
+  </header>
+
+  <section aria-labelledby="qual-h">
+    <div class="sec-head"><h2 id="qual-h">資格・講師</h2></div>
+    <div class="card">
+      <ul class="qual-list">
+        <li><span class="qual-mark" aria-hidden="true">■</span><span>シニアITサロンえーる講師</span></li>
+        <li><span class="qual-mark" aria-hidden="true">■</span><span>きものすなお認定講師</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="biz-h">
+    <div class="sec-head"><h2 id="biz-h" class="biz">合同会社よーそろの事業（広島県呉市大崎下島・御手洗地区）</h2></div>
+    <div class="biz-grid">
+      <div class="biz-item"><span>船宿カフェ若長</span></div>
+      <div class="biz-item"><span>潮待ち館</span></div>
+      <div class="biz-item"><span>GUEST HOUSE 醫（BAR醫）</span></div>
+      <a class="biz-item" href="https://mitarai-shintoyo.com/" target="_blank" rel="noopener noreferrer"><span>閑月庵新豊</span><span class="biz-arrow" aria-hidden="true">›</span></a>
+      <div class="biz-item"><span>SEAFRONT DINING 新豊</span></div>
+      <a class="biz-item" href="https://sauna.yosoro.com/" target="_blank" rel="noopener noreferrer"><span>サウナ新地鼻</span><span class="biz-arrow" aria-hidden="true">›</span></a>
+      <div class="biz-item"><span>よーそろ堂</span></div>
+      <div class="biz-item"><span>デザイン事業部</span></div>
+      <a class="biz-item" href="https://mitarai-wakiya.com/" target="_blank" rel="noopener noreferrer"><span>脇屋<span class="biz-note">レンタル着物・着付け教室</span></span><span class="biz-arrow" aria-hidden="true">›</span></a>
+    </div>
+  </section>
+
+  <section aria-labelledby="sns-h">
+    <div class="sec-head"><h2 id="sns-h">SNS</h2></div>
+    <div class="sns-grid">
+      <a class="sns-item" href="https://www.instagram.com/yumi_yosoro/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a class="sns-item secondary" href="https://www.threads.com/@yumi_yosoro" target="_blank" rel="noopener noreferrer">Threads</a>
+    </div>
+  </section>
+
+  <section aria-labelledby="hist-h">
+    <div class="sec-head"><h2 id="hist-h">職歴・学歴</h2></div>
+    <div class="card hist">
+      <div class="hist-row">
+        <p class="hist-label">職歴</p>
+        <p class="hist-main">合同会社よーそろ 専務執行役員</p>
+        <p class="hist-date">2014年3月 ～ 現在</p>
+      </div>
+      <div class="hist-row">
+        <p class="hist-label">学歴</p>
+        <p class="hist-main">島根大学大学院 農学研究科</p>
+        <p class="hist-date">1995年4月 ～ 2000年3月</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="foot-name">合同会社よーそろ</p>
+    <a href="https://yosoro.com/" target="_blank" rel="noopener noreferrer">yosoro.com</a>
+  </footer>
+
+</main>
+</body>
+</html>
